@@ -3,1398 +3,562 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Gaurav Patidar | Portfolio</title>
+        <meta
+            name="description"
+            content="Portfolio of Gaurav Patidar, a full-stack developer and open source contributor studying Computer Science at IIT ISM Dhanbad."
+        />
+        <title>Gaurav Patidar / Full-stack developer</title>
         <link rel="icon" type="image/png" href="favicon.png" />
-        <link rel="stylesheet" href="styles.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+            rel="stylesheet"
+        />
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
         />
+        <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
-        <header>
-            <div class="container">
-                <nav>
-                    <a href="#" class="logo">Gaurav Patidar</a>
-                    <div class="nav-right">
-                        <ul class="nav-links">
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#github">Open Source</a></li>
-                            <li><a href="#projects">Projects</a></li>
-                            <li><a href="#experience">Experience</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                        </ul>
-                        <button class="theme-toggle" aria-label="Toggle Theme">
-                            <i class="fas fa-moon"></i>
-                        </button>
-                        <button class="menu-toggle" aria-label="Toggle Menu">
-                            <i class="fas fa-bars"></i>
-                        </button>
-                    </div>
+        <div class="progress" aria-hidden="true"></div>
+        <header class="site-header">
+            <div class="container nav-wrap">
+                <a class="brand" href="#top" aria-label="Gaurav Patidar home"
+                    ><span>GP</span><strong>Gaurav Patidar</strong></a
+                >
+                <nav class="nav-links" aria-label="Primary navigation">
+                    <a href="#about">About</a><a href="#projects">Projects</a
+                    ><a href="#open-source">Open source</a
+                    ><a href="#contact">Contact</a>
                 </nav>
+                <div class="nav-actions">
+                    <a
+                        class="icon-link"
+                        href="https://github.com/gaurav7902"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Gaurav's GitHub"
+                        ><i class="fab fa-github"></i
+                    ></a>
+                    <button
+                        class="icon-button theme-toggle"
+                        type="button"
+                        aria-label="Toggle color theme"
+                    >
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button
+                        class="icon-button menu-toggle"
+                        type="button"
+                        aria-label="Open navigation menu"
+                        aria-expanded="false"
+                    >
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
             </div>
         </header>
 
-        <main>
-            <section id="hero" class="hero">
-                <div class="container">
-                    <div class="hero-content">
+        <main id="top">
+            <section class="hero container">
+                <div class="hero-copy reveal">
+                    <p class="eyebrow">
+                        <span class="live-dot"></span> Open to interesting
+                        builds
+                    </p>
+                    <h1>Code with<br /><em>curiosity.</em></h1>
+                    <p class="hero-lede">
+                        I’m Gaurav, a full-stack developer and computer science
+                        student making useful interfaces, tools, and open source
+                        contributions.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="button button-dark" href="#projects"
+                            >Explore my work
+                            <i class="fas fa-arrow-up-right-from-square"></i></a
+                        ><a class="quiet-link" href="#contact"
+                            >Let’s talk <i class="fas fa-arrow-right"></i
+                        ></a>
+                    </div>
+                    <div class="hero-foot">
+                        <span>Based in India</span><i></i
+                        ><span>IST / GMT +5:30</span>
+                    </div>
+                </div>
+                <div class="hero-visual reveal reveal-delay">
+                    <div class="portrait-wrap">
                         <img
                             src="avatar.png"
-                            alt="Gaurav Patidar"
-                            class="hero-avatar"
-                            loading="lazy"
+                            alt="Portrait of Gaurav Patidar"
                         />
-                        <div class="hero-info">
-                            <h1>Gaurav Patidar</h1>
-                            <h2>
-                                Full Stack Developer (MERN) & Open Source
-                                Contributor
-                            </h2>
-                            <p
-                                style="
-                                    font-size: 1rem;
-                                    color: var(--text-muted);
-                                    margin-top: 0.5rem;
-                                    margin-bottom: 1rem;
-                                "
-                            >
-                                B.Tech CSE 3rd Year | IIT ISM Dhanbad
-                            </p>
-                            <div class="hero-stats">
-                                <span class="project-tag">37 Repos</span>
-                                <span class="project-tag">4 Followers</span>
-                                <span class="project-tag">5 Following</span>
-                            </div>
-                            <div class="cta-buttons">
-                                <a href="#projects" class="btn btn-primary"
-                                    >View Projects</a
-                                >
-                                <a
-                                    href="https://github.com/gaurav7902"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="btn btn-secondary"
-                                >
-                                    <i class="fab fa-github"></i> GitHub
-                                </a>
-                            </div>
-                        </div>
+                        <div class="portrait-stamp">Gaurav<br />Patidar</div>
                     </div>
+                    <div class="visual-note">
+                        <span>01</span><span>Code / Learn / Build</span>
+                    </div>
+                    <div class="orbit orbit-a"></div>
+                    <div class="orbit orbit-b"></div>
                 </div>
             </section>
 
-            <section id="about">
-                <div class="container">
-                    <h2 class="section-title">About Me</h2>
-                    <div class="about-content">
+            <div class="ticker" aria-hidden="true">
+                <div>
+                    FULL-STACK DEVELOPMENT <b>✳</b> OPEN SOURCE <b>✳</b> DIGITAL
+                    CRAFT <b>✳</b> FULL-STACK DEVELOPMENT <b>✳</b> OPEN SOURCE
+                    <b>✳</b>
+                </div>
+            </div>
+
+            <section id="about" class="section container about-section">
+                <div class="section-label">01 / About</div>
+                <div class="about-content reveal">
+                    <div>
+                        <h2>
+                            Curious by default.<br /><span
+                                >Practical by design.</span
+                            >
+                        </h2>
+                        <p>
+                            Hi, I’m Gaurav Patidar, a third-year B.Tech Computer
+                            Science student at <strong>IIT ISM Dhanbad</strong>.
+                            I work across the stack, from shaping a frontend
+                            interaction to designing the API behind it.
+                        </p>
+                        <p>
+                            Most days you’ll find me exploring a new tool,
+                            contributing to open source, or making a small
+                            utility that removes one more bit of friction from
+                            my workflow.
+                        </p>
+                    </div>
+                    <aside class="stats-panel">
+                        <div><strong>37</strong><span>repositories</span></div>
+                        <div><strong>4</strong><span>followers</span></div>
                         <div>
-                            <p>
-                                Hi, I'm Gaurav Patidar. I'm a B.Tech CSE 3rd
-                                year student at IIT ISM Dhanbad. I'm a
-                                passionate full stack developer specializing in
-                                the MERN Stack (MongoDB, Express.js, React,
-                                Node.js). I love building interactive and
-                                user-friendly web applications, and I'm actively
-                                involved in open source contributions.
-                            </p>
-                            <p
-                                style="
-                                    margin-top: 1rem;
-                                    font-weight: 600;
-                                    color: var(--primary-color);
-                                    text-align: center;
-                                "
-                            >
-                                <strong>Code. Learn. Build. Repeat.</strong>
-                                <br />
-                                That's my mantra. I believe in continuous
-                                learning and sharing knowledge.
-                            </p>
-                            <p style="margin-top: 1rem">Tech stack & tools:</p>
-                            <div class="skills-list">
-                                <span class="skill-tag"
-                                    >JavaScript / TypeScript</span
-                                >
-                                <span class="skill-tag">React / Vite</span>
-                                <span class="skill-tag">Node.js / Express</span>
-                                <span class="skill-tag">Python / FastAPI</span>
-                                <span class="skill-tag"
-                                    >HTML5 / CSS3 / Tailwind</span
-                                >
-                                <span class="skill-tag">C / C++</span>
-                                <span class="skill-tag">Lua / Neovim</span>
-                                <span class="skill-tag">Git / GitHub</span>
-                                <span class="skill-tag">Docker</span>
-                                <span class="skill-tag">Linux / Bash</span>
-                            </div>
+                            <strong>∞</strong><span>things to learn</span>
+                        </div>
+                    </aside>
+                    <div class="skills">
+                        <p>Tools I reach for</p>
+                        <div class="skill-chips">
+                            <span>JavaScript / TypeScript</span
+                            ><span>React / Vite</span><span>Node / Express</span
+                            ><span>HTML / CSS / Tailwind</span><span>C / C++</span
+                            ><span>Lua / Neovim</span><span>Git / Docker</span
+                            ><span>Linux / Bash</span>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section id="projects">
+            <section id="projects" class="projects-section">
                 <div class="container">
-                    <h2 class="section-title">Projects</h2>
-
+                    <div class="section-heading">
+                        <div class="section-label">02 / Selected work</div>
+                        <p>
+                            Projects that helped me learn faster<br />and solve
+                            real problems.
+                        </p>
+                    </div>
+                    <div class="project-controls">
+                        <label for="project-order">Show me</label>
+                        <select id="project-order">
+                            <option value="curated">Curated order</option>
+                            <option value="full-stack">Full-stack first</option>
+                            <option value="systems">Systems &amp; tools first</option>
+                            <option value="alphabetical">A to Z</option>
+                        </select>
+                    </div>
                     <div class="projects-grid">
-                        <div class="project-card">
-                            <div>
-                                <div class="project-header">
-                                    <h3 class="project-title">
-                                        BuyNest E-Commerce
-                                    </h3>
-                                    <div class="project-links">
-                                        <a
-                                            href="https://github.com/gaurav7902/BuyNest-Ecom-Website"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            aria-label="GitHub Repository"
-                                        >
-                                            <i class="fab fa-github"></i>
-                                        </a>
-                                    </div>
+                        <article
+                            class="project-card project-card-featured reveal"
+                            data-project="buynest"
+                            data-kind="full-stack"
+                            data-rank="1"
+                        >
+                            <div class="project-art art-orange">
+                                <span>01 / COMMERCE</span
+                                ><i class="fas fa-bag-shopping"></i
+                                ><b>Built for<br />busy people.</b>
+                            </div>
+                            <div class="project-body">
+                                <div class="project-title-row">
+                                    <h3>BuyNest E-Commerce</h3>
+                                    <a
+                                        href="https://github.com/gaurav7902/BuyNest-Ecom-Website"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label="BuyNest repository"
+                                        ><i class="fab fa-github"></i
+                                    ></a>
                                 </div>
-                                <p class="project-desc">
-                                    A MERN-stack based secure E-Commerce
-                                    platform featuring user authentication,
-                                    product catalog, cart system, and secure
-                                    checkout.
+                                <p>
+                                    A secure MERN storefront with
+                                    authentication, product discovery, cart
+                                    flow, and checkout.
                                 </p>
-                            </div>
-                            <div class="project-tags">
-                                <span class="project-tag">JavaScript</span>
-                                <span class="project-tag">React</span>
-                                <span class="project-tag">Node.js</span>
-                                <span class="project-tag">MongoDB</span>
-                            </div>
-                        </div>
-
-                        <div class="project-card">
-                            <div>
-                                <div class="project-header">
-                                    <h3 class="project-title">
-                                        Learning Management System
-                                    </h3>
-                                    <div class="project-links">
-                                        <a
-                                            href="https://github.com/gaurav7902/learning-management-sys"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            aria-label="GitHub Repository"
-                                        >
-                                            <i class="fab fa-github"></i>
-                                        </a>
-                                    </div>
+                                <div class="tags">
+                                    <span>React</span><span>Node.js</span
+                                    ><span>MongoDB</span>
                                 </div>
-                                <p class="project-desc">
-                                    Full-stack Learning Management System (LMS)
-                                    integrated with PayPal Sandbox for payment
-                                    processing and course enrollments.
-                                </p>
                             </div>
-                            <div class="project-tags">
-                                <span class="project-tag">JavaScript</span>
-                                <span class="project-tag">Node.js</span>
-                                <span class="project-tag">Express</span>
-                                <span class="project-tag">PayPal API</span>
-                            </div>
-                        </div>
-
-                        <div class="project-card">
-                            <div>
-                                <div class="project-header">
-                                    <h3 class="project-title">
-                                        Graph Visualizer
-                                    </h3>
-                                    <div class="project-links">
-                                        <a
-                                            href="https://github.com/gaurav7902/graph-visualizer"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            aria-label="GitHub Repository"
-                                        >
-                                            <i class="fab fa-github"></i>
-                                        </a>
-                                    </div>
+                        </article>
+                        <article class="project-card reveal" data-project="graph" data-kind="systems" data-rank="3">
+                            <div class="project-art art-green">
+                                <span>02 / SYSTEMS</span>
+                                <div class="graph-art">
+                                    <i></i><i></i><i></i><i></i>
                                 </div>
-                                <p class="project-desc">
-                                    An interactive graph rendering and
-                                    visualization tool for data structures and
-                                    traversal algorithms.
-                                </p>
+                                <b>Make the<br />invisible visible.</b>
                             </div>
-                            <div class="project-tags">
-                                <span class="project-tag">JavaScript</span>
-                                <span class="project-tag">Algorithms</span>
-                                <span class="project-tag">Visualization</span>
-                            </div>
-                        </div>
-
-                        <div class="project-card">
-                            <div>
-                                <div class="project-header">
-                                    <h3 class="project-title">
-                                        The Movies Hub
-                                    </h3>
-                                    <div class="project-links">
-                                        <a
-                                            href="https://github.com/gaurav7902/The-Movies-Hub"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            aria-label="GitHub Repository"
-                                        >
-                                            <i class="fab fa-github"></i>
-                                        </a>
-                                    </div>
+                            <div class="project-body">
+                                <div class="project-title-row">
+                                    <h3>Graph Visualizer</h3>
+                                    <a
+                                        href="https://github.com/gaurav7902/graph-visualizer"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label="Graph Visualizer repository"
+                                        ><i class="fab fa-github"></i
+                                    ></a>
                                 </div>
-                                <p class="project-desc">
-                                    A modern movie discovery web app built with
-                                    React and Vite, letting users explore
-                                    trending movies and save favorites.
+                                <p>
+                                    Interactive visual exploration for data
+                                    structures and traversal algorithms.
                                 </p>
-                            </div>
-                            <div class="project-tags">
-                                <span class="project-tag">React</span>
-                                <span class="project-tag">Vite</span>
-                                <span class="project-tag">REST API</span>
-                            </div>
-                        </div>
-
-                        <div class="project-card">
-                            <div>
-                                <div class="project-header">
-                                    <h3 class="project-title">
-                                        Gemini CLI Chat
-                                    </h3>
-                                    <div class="project-links">
-                                        <a
-                                            href="https://github.com/gaurav7902/Gemini-Cli-Chat"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            aria-label="GitHub Repository"
-                                        >
-                                            <i class="fab fa-github"></i>
-                                        </a>
-                                    </div>
+                                <div class="tags">
+                                    <span>JavaScript</span
+                                    ><span>Algorithms</span>
                                 </div>
-                                <p class="project-desc">
-                                    Command-line chat tool written in Python to
-                                    interact directly with Google Gemini AI from
-                                    your terminal.
-                                </p>
                             </div>
-                            <div class="project-tags">
-                                <span class="project-tag">Python</span>
-                                <span class="project-tag">CLI</span>
-                                <span class="project-tag">Gemini API</span>
+                        </article>
+                        <article class="project-card reveal" data-project="onedrive" data-kind="systems" data-rank="4">
+                            <div class="project-art art-lime">
+                                <span>03 / PRODUCTIVITY</span
+                                ><i class="fas fa-cloud-arrow-down"></i
+                                ><b>Small tools.<br />Less friction.</b>
                             </div>
-                        </div>
-
-                        <div class="project-card">
-                            <div>
-                                <div class="project-header">
-                                    <h3 class="project-title">
-                                        OneDrive Downloader
-                                    </h3>
-                                    <div class="project-links">
-                                        <a
-                                            href="https://github.com/onedrive-dl"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            aria-label="GitHub Repository"
-                                        >
-                                            <i class="fab fa-github"></i>
-                                        </a>
-                                    </div>
+                            <div class="project-body">
+                                <div class="project-title-row">
+                                    <h3>OneDrive Downloader</h3>
+                                    <a
+                                        href="https://github.com/gaurav7902/onedrive-dl"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label="OneDrive Downloader repository"
+                                        ><i class="fab fa-github"></i
+                                    ></a>
                                 </div>
-                                <p class="project-desc">
-                                    CLI utility to download files and directory
-                                    structures directly from Microsoft OneDrive
-                                    links.
+                                <p>
+                                    CLI utility to download files and directory structures directly from OneDrive links.
                                 </p>
+                                <div class="tags">
+                                    <span>Python</span><span>CLI</span>
+                                </div>
                             </div>
-                            <div class="project-tags">
-                                <span class="project-tag">Python</span>
-                                <span class="project-tag">CLI</span>
-                                <span class="project-tag">Downloader</span>
+                        </article>
+                        <article class="project-card reveal" data-project="codeforces" data-kind="systems" data-rank="5">
+                            <div class="project-art art-black">
+                                <span>04 / COMPETITIVE CODING</span>
+                                <i class="fas fa-code"></i>
+                                <b>Focus on the<br />problem.</b>
                             </div>
+                            <div class="project-body">
+                                <div class="project-title-row">
+                                    <h3>Codeforces Dark Theme</h3>
+                                    <a
+                                        href="https://github.com/gaurav7902/codeforces-darktheme"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label="Codeforces Dark Theme repository"
+                                        ><i class="fab fa-github"></i
+                                    ></a>
+                                </div>
+                                <p>
+                                    A modern dark theme stylesheet for competitive programmers on Codeforces.
+                                </p>
+                                <div class="tags">
+                                    <span>CSS3</span><span>UserStyles</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="project-card reveal" data-project="learning-management" data-kind="full-stack" data-rank="2">
+                            <div class="project-art art-lime">
+                                <span>05 / LEARNING</span
+                                ><i class="fas fa-graduation-cap"></i
+                                ><b>Learn more.<br />Build better.</b>
+                            </div>
+                            <div class="project-body">
+                                <div class="project-title-row">
+                                    <h3>Learning Management System</h3>
+                                    <a
+                                        href="https://github.com/gaurav7902/learning-management-sys"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label="Learning Management System repository"
+                                        ><i class="fab fa-github"></i
+                                    ></a>
+                                </div>
+                                <p>
+                                    A full-stack learning platform with PayPal Sandbox payments and course enrollments.
+                                </p>
+                                <div class="tags">
+                                    <span>JavaScript</span><span>Node.js</span
+                                    ><span>PayPal API</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="project-card reveal" data-project="medical-copilot" data-kind="systems" data-rank="6">
+                            <div class="project-art art-purple">
+                                <span>06 / AI SYSTEMS</span
+                                ><i class="fas fa-stethoscope"></i
+                                ><b>Assist the<br />thinking.</b>
+                            </div>
+                            <div class="project-body">
+                                <div class="project-title-row">
+                                    <h3>Medical Copilot System</h3>
+                                    <a
+                                        href="https://github.com/gaurav7902/medical-copilot-system"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label="Medical Copilot System repository"
+                                        ><i class="fab fa-github"></i
+                                    ></a>
+                                </div>
+                                <p>
+                                    AI copilot assistant designed for medical diagnostics support and symptom evaluation.
+                                </p>
+                                <div class="tags">
+                                    <span>Python</span><span>AI</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div id="more-projects" class="more-projects" hidden>
+                        <div class="mini-grid">
+                            <a
+                                href="https://github.com/gaurav7902/The-Movies-Hub"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                ><span>07</span
+                                ><strong>The Movies Hub</strong
+                                ><i
+                                    class="fas fa-arrow-up-right-from-square"
+                                ></i></a
+                            ><a
+                                href="https://github.com/gaurav7902/Gemini-Cli-Chat"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                ><span>08</span
+                                ><strong>Gemini CLI Chat</strong
+                                ><i
+                                    class="fas fa-arrow-up-right-from-square"
+                                ></i></a
+                            ><a
+                                href="https://github.com/gaurav7902/obsidian-graph-in-vscode"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                ><span>09</span
+                                ><strong>Obsidian Graph in VS Code</strong
+                                ><i
+                                    class="fas fa-arrow-up-right-from-square"
+                                ></i></a
+                            ><a
+                                href="https://github.com/gaurav7902/my-neovim-configuration"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                ><span>10</span
+                                ><strong>My Neovim Configuration</strong
+                                ><i
+                                    class="fas fa-arrow-up-right-from-square"
+                                ></i></a
+                            ><a
+                                href="https://github.com/gaurav7902/101-linux-commands"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                ><span>11</span
+                                ><strong>101 Linux Commands</strong
+                                ><i
+                                    class="fas fa-arrow-up-right-from-square"
+                                ></i></a
+                            ><a
+                                href="https://github.com/gaurav7902/Operating-Systems-Project"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                ><span>12</span
+                                ><strong>Operating Systems Projects</strong
+                                ><i
+                                    class="fas fa-arrow-up-right-from-square"
+                                ></i
+                            ></a>
                         </div>
                     </div>
-
-                    <div class="more-projects hidden">
-                        <div class="projects-grid">
-                            <div class="project-card">
-                                <div>
-                                    <div class="project-header">
-                                        <h3 class="project-title">
-                                            Codeforces Dark Theme
-                                        </h3>
-                                        <div class="project-links">
-                                            <a
-                                                href="https://github.com/gaurav7902/codeforces-darktheme"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                aria-label="GitHub Repository"
-                                            >
-                                                <i class="fab fa-github"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <p class="project-desc">
-                                        Modern dark theme stylesheet for
-                                        competitive programmers on Codeforces.
-                                    </p>
-                                </div>
-                                <div class="project-tags">
-                                    <span class="project-tag">CSS3</span>
-                                    <span class="project-tag">UserStyles</span>
-                                </div>
-                            </div>
-
-                            <div class="project-card">
-                                <div>
-                                    <div class="project-header">
-                                        <h3 class="project-title">
-                                            Obsidian Graph in VS Code
-                                        </h3>
-                                        <div class="project-links">
-                                            <a
-                                                href="https://github.com/gaurav7902/obsidian-graph-in-vscode"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                aria-label="GitHub Repository"
-                                            >
-                                                <i class="fab fa-github"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <p class="project-desc">
-                                        VS Code extension for rendering markdown
-                                        note links as interactive obsidian-style
-                                        graphs.
-                                    </p>
-                                </div>
-                                <div class="project-tags">
-                                    <span class="project-tag">JavaScript</span>
-                                    <span class="project-tag">VS Code API</span>
-                                </div>
-                            </div>
-
-                            <div class="project-card">
-                                <div>
-                                    <div class="project-header">
-                                        <h3 class="project-title">
-                                            Safest Volume Booster
-                                        </h3>
-                                        <div class="project-links">
-                                            <a
-                                                href="https://github.com/gaurav7902/safest-volume-booster"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                aria-label="GitHub Repository"
-                                            >
-                                                <i class="fab fa-github"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <p class="project-desc">
-                                        Browser extension providing safe audio
-                                        amplification without sound distortion.
-                                    </p>
-                                </div>
-                                <div class="project-tags">
-                                    <span class="project-tag">JavaScript</span>
-                                    <span class="project-tag"
-                                        >WebAudio API</span
-                                    >
-                                </div>
-                            </div>
-
-                            <div class="project-card">
-                                <div>
-                                    <div class="project-header">
-                                        <h3 class="project-title">
-                                            Weather App
-                                        </h3>
-                                        <div class="project-links">
-                                            <a
-                                                href="https://github.com/gaurav7902/weather-app"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                aria-label="GitHub Repository"
-                                            >
-                                                <i class="fab fa-github"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <p class="project-desc">
-                                        Clean weather forecasting web
-                                        application utilizing OpenWeather map
-                                        APIs.
-                                    </p>
-                                </div>
-                                <div class="project-tags">
-                                    <span class="project-tag">JavaScript</span>
-                                    <span class="project-tag">REST API</span>
-                                </div>
-                            </div>
-
-                            <div class="project-card">
-                                <div>
-                                    <div class="project-header">
-                                        <h3 class="project-title">
-                                            101 Linux Commands
-                                        </h3>
-                                        <div class="project-links">
-                                            <a
-                                                href="https://github.com/gaurav7902/101-linux-commands"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                aria-label="GitHub Repository"
-                                            >
-                                                <i class="fab fa-github"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <p class="project-desc">
-                                        Interactive command-line guide and
-                                        examples covering essential Linux system
-                                        administration commands.
-                                    </p>
-                                </div>
-                                <div class="project-tags">
-                                    <span class="project-tag">Bash</span>
-                                    <span class="project-tag">Linux</span>
-                                </div>
-                            </div>
-
-                            <div class="project-card">
-                                <div>
-                                    <div class="project-header">
-                                        <h3 class="project-title">
-                                            CPH & CPOS
-                                        </h3>
-                                        <div class="project-links">
-                                            <a
-                                                href="https://github.com/gaurav7902/cph"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                aria-label="GitHub Repository"
-                                            >
-                                                <i class="fab fa-github"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <p class="project-desc">
-                                        Competitive Programming Helper utilities
-                                        for automatic test-case fetching and
-                                        execution.
-                                    </p>
-                                </div>
-                                <div class="project-tags">
-                                    <span class="project-tag">C++</span>
-                                    <span class="project-tag">Python</span>
-                                </div>
-                            </div>
-
-                            <div class="project-card">
-                                <div>
-                                    <div class="project-header">
-                                        <h3 class="project-title">
-                                            Gmail Shortcuts Plus
-                                        </h3>
-                                        <div class="project-links">
-                                            <a
-                                                href="https://github.com/gaurav7902/gmail-shortcuts-plus"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                aria-label="GitHub Repository"
-                                            >
-                                                <i class="fab fa-github"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <p class="project-desc">
-                                        Browser extension adding
-                                        productivity-focused keyboard shortcuts
-                                        to Gmail interface.
-                                    </p>
-                                </div>
-                                <div class="project-tags">
-                                    <span class="project-tag">JavaScript</span>
-                                    <span class="project-tag"
-                                        >WebExtension</span
-                                    >
-                                </div>
-                            </div>
-
-                            <div class="project-card">
-                                <div>
-                                    <div class="project-header">
-                                        <h3 class="project-title">
-                                            Medical Copilot System
-                                        </h3>
-                                        <div class="project-links">
-                                            <a
-                                                href="https://github.com/gaurav7902/medical-copilot-system"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                aria-label="GitHub Repository"
-                                            >
-                                                <i class="fab fa-github"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <p class="project-desc">
-                                        AI copilot assistant designed for
-                                        medical diagnostics support and symptom
-                                        evaluation.
-                                    </p>
-                                </div>
-                                <div class="project-tags">
-                                    <span class="project-tag">Python</span>
-                                    <span class="project-tag">AI</span>
-                                </div>
-                            </div>
-
-                            <div class="project-card">
-                                <div>
-                                    <div class="project-header">
-                                        <h3 class="project-title">
-                                            AdSkip Elite & QDM
-                                        </h3>
-                                        <div class="project-links">
-                                            <a
-                                                href="https://github.com/gaurav7902/Adskip-Elite"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                aria-label="GitHub Repository"
-                                            >
-                                                <i class="fab fa-github"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <p class="project-desc">
-                                        Browser extension tool for automatic
-                                        media ad handling and quick download
-                                        acceleration.
-                                    </p>
-                                </div>
-                                <div class="project-tags">
-                                    <span class="project-tag">JavaScript</span>
-                                    <span class="project-tag"
-                                        >Browser Extension</span
-                                    >
-                                </div>
-                            </div>
-
-                            <div class="project-card">
-                                <div>
-                                    <div class="project-header">
-                                        <h3 class="project-title">
-                                            Library Management System
-                                        </h3>
-                                        <div class="project-links">
-                                            <a
-                                                href="https://github.com/gaurav7902/LIbrary-Management-System"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                aria-label="GitHub Repository"
-                                            >
-                                                <i class="fab fa-github"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <p class="project-desc">
-                                        Database application for managing book
-                                        inventories, member issuance, and return
-                                        tracking.
-                                    </p>
-                                </div>
-                                <div class="project-tags">
-                                    <span class="project-tag">SQL</span>
-                                    <span class="project-tag">Python</span>
-                                </div>
-                            </div>
-
-                            <div class="project-card">
-                                <div>
-                                    <div class="project-header">
-                                        <h3 class="project-title">
-                                            Operating Systems Projects
-                                        </h3>
-                                        <div class="project-links">
-                                            <a
-                                                href="https://github.com/gaurav7902/Operating-Systems-Project"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                aria-label="GitHub Repository"
-                                            >
-                                                <i class="fab fa-github"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <p class="project-desc">
-                                        Collection of CPU scheduling algorithms,
-                                        page replacement algorithms, and process
-                                        synchronization.
-                                    </p>
-                                </div>
-                                <div class="project-tags">
-                                    <span class="project-tag">C</span>
-                                    <span class="project-tag">C++</span>
-                                    <span class="project-tag">OS</span>
-                                </div>
-                            </div>
-
-                            <div class="project-card">
-                                <div>
-                                    <div class="project-header">
-                                        <h3 class="project-title">
-                                            My Neovim Configuration
-                                        </h3>
-                                        <div class="project-links">
-                                            <a
-                                                href="https://github.com/gaurav7902/my-neovim-configuration"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                aria-label="GitHub Repository"
-                                            >
-                                                <i class="fab fa-github"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <p class="project-desc">
-                                        Personal Neovim dotfiles configured with
-                                        Lua, LSP, Treesitter, and custom
-                                        keybindings.
-                                    </p>
-                                </div>
-                                <div class="project-tags">
-                                    <span class="project-tag">Lua</span>
-                                    <span class="project-tag">Neovim</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="toggle-projects-wrapper">
+                    <div class="projects-footer">
                         <button
-                            id="toggle-projects-btn"
-                            class="btn btn-secondary"
+                            id="toggle-projects"
+                            class="quiet-link"
+                            type="button"
+                            aria-expanded="false"
                         >
-                            Show All Projects
-                        </button>
+                            View more projects
+                            <i class="fas fa-arrow-down"></i></button
+                        ><a
+                            class="quiet-link"
+                            href="https://github.com/gaurav7902?tab=repositories"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            >All repositories <i class="fas fa-arrow-right"></i
+                        ></a>
                     </div>
                 </div>
             </section>
 
-            <section id="github">
-                <div class="container">
-                    <h2 class="section-title">Open Source Contributions</h2>
-                    <p class="project-desc">
-                        Active contributions, bug fixes, and improvements to
-                        major open source projects and upstream repositories.
-                    </p>
-
-                    <div class="github-stats-grid">
-                        <div
-                            class="github-card"
-                            style="grid-column: 1 / -1; padding: 1rem"
-                        >
-                            <h3
-                                style="
-                                    color: var(--text-heading);
-                                    margin-bottom: 0.75rem;
-                                    text-align: center;
-                                "
-                            >
-                                Top Languages & Activity
-                            </h3>
-                            <div
-                                style="
-                                    display: flex;
-                                    justify-content: center;
-                                    gap: 1.5rem;
-                                    flex-wrap: wrap;
-                                    margin-bottom: 1rem;
-                                "
-                            >
-                                <a
-                                    href="https://github.com/gaurav7902"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <!-- <img
-                                        src="https://github-readme-stats-gaurav7902.vercel.app/api/top-langs/?username=gaurav7902&layout=compact&theme=dark&hide_border=true&langs_count=8&bg_color=161b22&title_color=f0f6fc"
-                                        alt="Top Languages"
-                                        loading="lazy" /> -->
-                                </a>
-                                <a
-                                    href="https://github.com/gaurav7902"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <img
-                                        src="https://github-readme-streak-stats.herokuapp.com/?user=gaurav7902&theme=dark&hide_border=true&background=161b22&stroke=30363d&ring=58a6ff&fire=58a6ff&currStreakNum=f0f6fc&sideNums=f0f6fc&currStreakLabel=f0f6fc&sideLabels=f0f6fc"
-                                        alt="Streak Stats"
-                                        loading="lazy"
-                                    />
-                                </a>
-                            </div>
-                            <div
-                                style="
-                                    display: flex;
-                                    justify-content: center;
-                                    flex-wrap: wrap;
-                                    gap: 0.5rem;
-                                "
-                            >
-                                <span
-                                    style="
-                                        display: inline-flex;
-                                        align-items: center;
-                                        gap: 0.35rem;
-                                        background: #f1e05a22;
-                                        border: 1px solid #f1e05a44;
-                                        color: #f1e05a;
-                                        padding: 0.25rem 0.6rem;
-                                        border-radius: 4px;
-                                        font-size: 0.75rem;
-                                    "
-                                    ><span
-                                        style="
-                                            width: 10px;
-                                            height: 10px;
-                                            border-radius: 50%;
-                                            background: #f1e05a;
-                                            display: inline-block;
-                                        "
-                                    ></span
-                                    >JavaScript</span
-                                >
-                                <span
-                                    style="
-                                        display: inline-flex;
-                                        align-items: center;
-                                        gap: 0.35rem;
-                                        background: #3572a522;
-                                        border: 1px solid #3572a544;
-                                        color: #3572a5;
-                                        padding: 0.25rem 0.6rem;
-                                        border-radius: 4px;
-                                        font-size: 0.75rem;
-                                    "
-                                    ><span
-                                        style="
-                                            width: 10px;
-                                            height: 10px;
-                                            border-radius: 50%;
-                                            background: #3572a5;
-                                            display: inline-block;
-                                        "
-                                    ></span
-                                    >Python</span
-                                >
-                                <span
-                                    style="
-                                        display: inline-flex;
-                                        align-items: center;
-                                        gap: 0.35rem;
-                                        background: #3178c622;
-                                        border: 1px solid #3178c644;
-                                        color: #3178c6;
-                                        padding: 0.25rem 0.6rem;
-                                        border-radius: 4px;
-                                        font-size: 0.75rem;
-                                    "
-                                    ><span
-                                        style="
-                                            width: 10px;
-                                            height: 10px;
-                                            border-radius: 50%;
-                                            background: #3178c6;
-                                            display: inline-block;
-                                        "
-                                    ></span
-                                    >TypeScript</span
-                                >
-                                <span
-                                    style="
-                                        display: inline-flex;
-                                        align-items: center;
-                                        gap: 0.35rem;
-                                        background: #e34c2622;
-                                        border: 1px solid #e34c2644;
-                                        color: #e34c26;
-                                        padding: 0.25rem 0.6rem;
-                                        border-radius: 4px;
-                                        font-size: 0.75rem;
-                                    "
-                                    ><span
-                                        style="
-                                            width: 10px;
-                                            height: 10px;
-                                            border-radius: 50%;
-                                            background: #e34c26;
-                                            display: inline-block;
-                                        "
-                                    ></span
-                                    >HTML</span
-                                >
-                                <span
-                                    style="
-                                        display: inline-flex;
-                                        align-items: center;
-                                        gap: 0.35rem;
-                                        background: #00000022;
-                                        border: 1px solid #ffffff44;
-                                        color: #ccc;
-                                        padding: 0.25rem 0.6rem;
-                                        border-radius: 4px;
-                                        font-size: 0.75rem;
-                                    "
-                                    ><span
-                                        style="
-                                            width: 10px;
-                                            height: 10px;
-                                            border-radius: 50%;
-                                            background: #ccc;
-                                            display: inline-block;
-                                        "
-                                    ></span
-                                    >Lua</span
-                                >
-                                <span
-                                    style="
-                                        display: inline-flex;
-                                        align-items: center;
-                                        gap: 0.35rem;
-                                        background: #f34b7d22;
-                                        border: 1px solid #f34b7d44;
-                                        color: #f34b7d;
-                                        padding: 0.25rem 0.6rem;
-                                        border-radius: 4px;
-                                        font-size: 0.75rem;
-                                    "
-                                    ><span
-                                        style="
-                                            width: 10px;
-                                            height: 10px;
-                                            border-radius: 50%;
-                                            background: #f34b7d;
-                                            display: inline-block;
-                                        "
-                                    ></span
-                                    >C++</span
-                                >
-                                <span
-                                    style="
-                                        display: inline-flex;
-                                        align-items: center;
-                                        gap: 0.35rem;
-                                        background: #55555522;
-                                        border: 1px solid #55555544;
-                                        color: #555;
-                                        padding: 0.25rem 0.6rem;
-                                        border-radius: 4px;
-                                        font-size: 0.75rem;
-                                    "
-                                    ><span
-                                        style="
-                                            width: 10px;
-                                            height: 10px;
-                                            border-radius: 50%;
-                                            background: #555;
-                                            display: inline-block;
-                                        "
-                                    ></span
-                                    >C</span
-                                >
-                                <span
-                                    style="
-                                        display: inline-flex;
-                                        align-items: center;
-                                        gap: 0.35rem;
-                                        background: #563d7c22;
-                                        border: 1px solid #563d7c44;
-                                        color: #563d7c;
-                                        padding: 0.25rem 0.6rem;
-                                        border-radius: 4px;
-                                        font-size: 0.75rem;
-                                    "
-                                    ><span
-                                        style="
-                                            width: 10px;
-                                            height: 10px;
-                                            border-radius: 50%;
-                                            background: #563d7c;
-                                            display: inline-block;
-                                        "
-                                    ></span
-                                    >CSS</span
-                                >
-                            </div>
-                        </div>
+            <section
+                id="open-source"
+                class="section container open-source-section"
+            >
+                <div class="section-label">03 / Open source</div>
+                <div class="open-source-grid reveal">
+                    <div>
+                        <h2>
+                            Build in public.<br /><span>Give back often.</span>
+                        </h2>
+                        <p>
+                            Open source is where I sharpen my thinking, share
+                            useful tools, and learn from people building at a
+                            different scale.
+                        </p>
+                        <a
+                            class="button button-orange"
+                            href="https://github.com/gaurav7902"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            >Visit my GitHub <i class="fab fa-github"></i
+                        ></a>
                     </div>
-
-                    <div
-                        style="
-                            margin-top: 2rem;
-                            border-radius: 8px;
-                            overflow: hidden;
-                            border: 1px solid var(--card-border);
-                            background: var(--card-bg);
-                        "
-                    >
-                        <div
-                            style="
-                                padding: 1.5rem 1.5rem 0.75rem;
-                                text-align: center;
-                            "
-                        >
-                            <h3
-                                style="
-                                    color: var(--text-heading);
-                                    margin-bottom: 0.35rem;
-                                "
-                            >
-                                Contribution Graph
-                            </h3>
-                            <p
-                                style="
-                                    font-size: 0.85rem;
-                                    color: var(--text-muted);
-                                    margin: 0;
-                                "
-                            >
-                                Consistent open source contributions across the
-                                year.
-                            </p>
+                    <div class="code-card">
+                        <div class="code-top">
+                            <span></span><span></span><span></span
+                            ><b>~/gaurav7902</b>
                         </div>
-                        <img
-                            src="https://ghchart.rshah.org/238636/gaurav7902"
-                            alt="GitHub Contribution Graph"
-                            style="
-                                width: 100%;
-                                padding: 0.5rem 1rem 1.5rem;
-                                box-sizing: border-box;
-                            "
-                            loading="lazy"
-                        />
-                    </div>
+                        <pre><code><i>// currently exploring</i>
+<span>const</span> interests = [
+  <em>“open source”</em>,
+  <em>“developer tools”</em>,
+  <em>“good interfaces”</em>
+];
 
-                    <h3
-                        style="
-                            color: var(--text-heading);
-                            margin-top: 2.5rem;
-                            margin-bottom: 1.25rem;
-                        "
-                    >
-                        Projects Contributed To (Forks & Upstream)
-                    </h3>
-                    <div class="projects-grid">
-                        <div class="project-card">
-                            <div>
-                                <div class="project-header">
-                                    <h3 class="project-title">
-                                        Vanilla Framework
-                                    </h3>
-                                    <div class="project-links">
-                                        <a
-                                            href="https://github.com/canonical/vanilla-framework"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            aria-label="Canonical Vanilla Framework"
-                                        >
-                                            <i class="fab fa-github"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                                <p class="project-desc">
-                                    Canonical's core CSS framework providing
-                                    consistent styling for Ubuntu products and
-                                    web applications.
-                                </p>
-                            </div>
-                            <div class="project-tags">
-                                <span class="project-tag">HTML/CSS</span>
-                                <span class="project-tag">Canonical</span>
-                                <span class="project-tag">Ubuntu</span>
-                            </div>
-                        </div>
-
-                        <div class="project-card">
-                            <div>
-                                <div class="project-header">
-                                    <h3 class="project-title">Authentik</h3>
-                                    <div class="project-links">
-                                        <a
-                                            href="https://github.com/goauthentik/authentik"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            aria-label="Authentik"
-                                        >
-                                            <i class="fab fa-github"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                                <p class="project-desc">
-                                    Open-source identity provider and
-                                    authentication engine built with Python and
-                                    Django.
-                                </p>
-                            </div>
-                            <div class="project-tags">
-                                <span class="project-tag">Python</span>
-                                <span class="project-tag">Authentication</span>
-                                <span class="project-tag">Security</span>
-                            </div>
-                        </div>
-
-                        <div class="project-card">
-                            <div>
-                                <div class="project-header">
-                                    <h3 class="project-title">
-                                        GNOME Clipboard Indicator
-                                    </h3>
-                                    <div class="project-links">
-                                        <a
-                                            href="https://github.com/Tudmotu/gnome-shell-extension-clipboard-indicator"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            aria-label="GNOME Clipboard Indicator"
-                                        >
-                                            <i class="fab fa-github"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                                <p class="project-desc">
-                                    Top clipboard management extension for the
-                                    GNOME Desktop Shell with 2M+ downloads.
-                                </p>
-                            </div>
-                            <div class="project-tags">
-                                <span class="project-tag">JavaScript</span>
-                                <span class="project-tag">GNOME</span>
-                                <span class="project-tag">Linux</span>
-                            </div>
-                        </div>
-
-                        <div class="project-card">
-                            <div>
-                                <div class="project-header">
-                                    <h3 class="project-title">
-                                        Cloudflare Computer
-                                    </h3>
-                                    <div class="project-links">
-                                        <a
-                                            href="https://github.com/cloudflare/computer"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            aria-label="Cloudflare Computer"
-                                        >
-                                            <i class="fab fa-github"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                                <p class="project-desc">
-                                    Cloudflare environment for enabling AI
-                                    agents to control browser and desktop
-                                    virtual instances.
-                                </p>
-                            </div>
-                            <div class="project-tags">
-                                <span class="project-tag">TypeScript</span>
-                                <span class="project-tag">Cloudflare</span>
-                                <span class="project-tag">AI Agents</span>
-                            </div>
-                        </div>
-
-                        <div class="project-card">
-                            <div>
-                                <div class="project-header">
-                                    <h3 class="project-title">FOSSEE eSim</h3>
-                                    <div class="project-links">
-                                        <a
-                                            href="https://github.com/FOSSEE/eSim"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            aria-label="FOSSEE eSim"
-                                        >
-                                            <i class="fab fa-github"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                                <p class="project-desc">
-                                    Open-source EDA tool for electrical circuit
-                                    design, simulation, and schematic capture.
-                                </p>
-                            </div>
-                            <div class="project-tags">
-                                <span class="project-tag">Python</span>
-                                <span class="project-tag">FOSSEE</span>
-                                <span class="project-tag">EDA</span>
-                            </div>
-                        </div>
-
-                        <div class="project-card">
-                            <div>
-                                <div class="project-header">
-                                    <h3 class="project-title">AudioMuse AI</h3>
-                                    <div class="project-links">
-                                        <a
-                                            href="https://github.com/NeptuneHub/AudioMuse-AI"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            aria-label="AudioMuse AI"
-                                        >
-                                            <i class="fab fa-github"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                                <p class="project-desc">
-                                    Sonic audio analysis engine and smart
-                                    playlist generator for Navidrome and
-                                    Jellyfin media servers.
-                                </p>
-                            </div>
-                            <div class="project-tags">
-                                <span class="project-tag">Python</span>
-                                <span class="project-tag">Audio AI</span>
-                                <span class="project-tag">Jellyfin</span>
-                            </div>
-                        </div>
-
-                        <div class="project-card">
-                            <div>
-                                <div class="project-header">
-                                    <h3 class="project-title">Claude Skills</h3>
-                                    <div class="project-links">
-                                        <a
-                                            href="https://github.com/alirezarezvani/claude-skills"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            aria-label="Claude Skills"
-                                        >
-                                            <i class="fab fa-github"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                                <p class="project-desc">
-                                    Comprehensive collection of custom agent
-                                    skills, prompt commands, and tool
-                                    integrations for AI coding agents.
-                                </p>
-                            </div>
-                            <div class="project-tags">
-                                <span class="project-tag">Python</span>
-                                <span class="project-tag">AI Prompts</span>
-                                <span class="project-tag">Automation</span>
-                            </div>
-                        </div>
-
-                        <div class="project-card">
-                            <div>
-                                <div class="project-header">
-                                    <h3 class="project-title">
-                                        Super Productivity
-                                    </h3>
-                                    <div class="project-links">
-                                        <a
-                                            href="https://github.com/johannesjo/super-productivity"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            aria-label="Super Productivity"
-                                        >
-                                            <i class="fab fa-github"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                                <p class="project-desc">
-                                    Advanced open-source task manager and time
-                                    tracker for software developers.
-                                </p>
-                            </div>
-                            <div class="project-tags">
-                                <span class="project-tag">TypeScript</span>
-                                <span class="project-tag">Electron</span>
-                                <span class="project-tag">Productivity</span>
-                            </div>
-                        </div>
-
-                        <div class="project-card">
-                            <div>
-                                <div class="project-header">
-                                    <h3 class="project-title">
-                                        OpenSource Guide
-                                    </h3>
-                                    <div class="project-links">
-                                        <a
-                                            href="https://github.com/github/opensource.guide"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            aria-label="GitHub OpenSource Guide"
-                                        >
-                                            <i class="fab fa-github"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                                <p class="project-desc">
-                                    GitHub's official guide to creating,
-                                    maintaining, and contributing to open source
-                                    software.
-                                </p>
-                            </div>
-                            <div class="project-tags">
-                                <span class="project-tag">Markdown</span>
-                                <span class="project-tag">GitHub</span>
-                                <span class="project-tag">Documentation</span>
-                            </div>
-                        </div>
-
-                        <div class="project-card">
-                            <div>
-                                <div class="project-header">
-                                    <h3 class="project-title">
-                                        MIT xv6 RISC-V
-                                    </h3>
-                                    <div class="project-links">
-                                        <a
-                                            href="https://github.com/mit-pdos/xv6-riscv"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            aria-label="MIT xv6 RISC-V"
-                                        >
-                                            <i class="fab fa-github"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                                <p class="project-desc">
-                                    MIT's teaching operating system for RISC-V
-                                    architecture written in C.
-                                </p>
-                            </div>
-                            <div class="project-tags">
-                                <span class="project-tag">C</span>
-                                <span class="project-tag">Kernel</span>
-                                <span class="project-tag">RISC-V</span>
-                            </div>
-                        </div>
+<span>export default</span> interests;</code></pre>
                     </div>
                 </div>
             </section>
 
-            <section id="experience">
+            <section id="experience" class="section experience-section">
                 <div class="container">
-                    <h2 class="section-title">Experience & Education</h2>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <h3 class="timeline-title">
-                                B.Tech in Computer Science & Engineering
-                            </h3>
-                            <div class="timeline-subtitle">
-                                IIT ISM Dhanbad | 2024 - 2028 (Expected)
+                    <div class="section-label">04 / The path so far</div>
+                    <div class="timeline reveal">
+                        <article>
+                            <span class="timeline-year">2025 — now</span>
+                            <div>
+                                <h3>
+                                    Full-stack developer & open source
+                                    contributor
+                                </h3>
+                                <p>Independent / community projects</p>
+                                <small
+                                    >Building full-stack applications with the
+                                    MERN stack, open source tools, Linux
+                                    utilities, and browser extensions across 37+
+                                    GitHub repositories.</small
+                                >
                             </div>
-                            <p class="timeline-desc">
-                                Currently in 3rd year. Deep dive into software
-                                engineering, data structures, algorithms,
-                                operating systems, networking, database systems,
-                                and full-stack web development with MERN Stack.
-                            </p>
-                        </div>
-                        <div class="timeline-item">
-                            <h3 class="timeline-title">
-                                Full Stack Developer & Open Source Contributor
-                            </h3>
-                            <div class="timeline-subtitle">
-                                Independent / Community Projects | 2025 -
-                                Present
+                        </article>
+                        <article>
+                            <span class="timeline-year">2024 — 2028</span>
+                            <div>
+                                <h3>
+                                    B.Tech in Computer Science & Engineering
+                                </h3>
+                                <p>IIT ISM Dhanbad</p>
+                                <small
+                                    >Studying software engineering, data
+                                    structures, algorithms, operating systems,
+                                    networking, databases, and full-stack web
+                                    development.</small
+                                >
                             </div>
-                            <p class="timeline-desc">
-                                Active across 37+ repositories on GitHub.
-                                Building full-stack web applications using MERN
-                                Stack, open source tools, Linux utilities, and
-                                browser extensions.
-                            </p>
-                        </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="contact-section">
+                <div class="container contact-inner">
+                    <p class="section-label">05 / Say hello</p>
+                    <h2>
+                        Have a good problem?<br /><em>Let’s work on it.</em>
+                    </h2>
+                    <a
+                        class="email-link"
+                        href="mailto:patidargaurav7902@gmail.com"
+                        >patidargaurav7902@gmail.com
+                        <i class="fas fa-arrow-up-right-from-square"></i
+                    ></a>
+                    <div class="social-links">
+                        <a
+                            href="https://github.com/gaurav7902"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            >GitHub</a
+                        ><a
+                            href="https://www.linkedin.com/in/gauravpatidar"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            >LinkedIn</a
+                        ><a
+                            href="https://x.com/ggoravv"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            >X / Twitter</a
+                        ><a
+                            href="https://youtube.com/@go7av"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            >YouTube</a
+                        ><a
+                            href="https://instagram.com/go7av"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            >Instagram</a
+                        >
                     </div>
                 </div>
             </section>
         </main>
-
         <footer>
-            <div class="footer-content">
-                <h2 class="section-title">Get In Touch</h2>
-                <p>
-                    Interested in collaborating on a project or discussing open
-                    source? Feel free to connect!
-                </p>
-                <br />
-                <div class="footer-social">
-                    <a
-                        href="https://github.com/gaurav7902"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="social-icon"
-                        aria-label="GitHub"
-                    >
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a
-                        href="https://www.linkedin.com/in/gauravpatidar"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="social-icon linkedin"
-                        aria-label="LinkedIn"
-                    >
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a
-                        href="https://x.com/ggoravv"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="social-icon twitter"
-                        aria-label="X (Twitter)"
-                    >
-                        <i class="fa-brands fa-square-x-twitter"></i>
-                    </a>
-                    <a
-                        href="https://youtube.com/@go7av"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="social-icon youtube"
-                        aria-label="YouTube"
-                    >
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                    <a
-                        href="https://instagram.com/go7av"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="social-icon instagram"
-                        aria-label="Instagram"
-                    >
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </div>
-                <div class="footer-links">
-                    <a href="#about">About</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#experience">Experience</a>
-                    <a href="#contact">Contact</a>
-                </div>
-                <div class="footer-bottom">
-                    <p>
-                        &copy; 2026 Gaurav Patidar. Built with
-                        <i class="fas fa-heart" style="color: #f85149"></i>
-                        using HTML, CSS & JavaScript.
-                    </p>
-                </div>
+            <div class="container">
+                <span>© 2026 Gaurav Patidar</span
+                ><span>Code. Learn. Build. Repeat.</span
+                ><a href="#top">Back to top ↑</a>
             </div>
         </footer>
-
+        <style>
+            main {
+                overflow-x: clip;
+            }
+            .hero {
+                overflow: hidden;
+            }
+            .project-title-row h3 {
+                overflow-wrap: anywhere;
+            }
+            .email-link {
+                max-width: 100%;
+                overflow-wrap: anywhere;
+            }
+        </style>
         <script src="script.js"></script>
     </body>
 </html>
