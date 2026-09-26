@@ -75,14 +75,21 @@ document.addEventListener('DOMContentLoaded', () => {
             if (mode === 'alphabetical') {
                 return first
                     .querySelector('h3')
-                    .textContent.localeCompare(second.querySelector('h3').textContent);
+                    .textContent.localeCompare(
+                        second.querySelector('h3').textContent,
+                    );
             }
 
             if (mode === 'full-stack' || mode === 'systems') {
-                const preferred = mode === 'full-stack' ? 'full-stack' : 'systems';
+                const preferred =
+                    mode === 'full-stack' ? 'full-stack' : 'systems';
                 const firstPriority = first.dataset.kind === preferred ? 0 : 1;
-                const secondPriority = second.dataset.kind === preferred ? 0 : 1;
-                return firstPriority - secondPriority || Number(first.dataset.rank) - Number(second.dataset.rank);
+                const secondPriority =
+                    second.dataset.kind === preferred ? 0 : 1;
+                return (
+                    firstPriority - secondPriority ||
+                    Number(first.dataset.rank) - Number(second.dataset.rank)
+                );
             }
 
             return Number(first.dataset.rank) - Number(second.dataset.rank);
@@ -92,7 +99,9 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     sortProjects('curated');
-    projectOrder.addEventListener('change', (event) => sortProjects(event.target.value));
+    projectOrder.addEventListener('change', (event) =>
+        sortProjects(event.target.value),
+    );
 
     const observer = new IntersectionObserver(
         (entries) => {
