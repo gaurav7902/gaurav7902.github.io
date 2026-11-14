@@ -10,9 +10,9 @@
     --white: #fffdf7;
     --forest: #16221d;
     --forest-text: #f4f0e8;
-    --display: 'Space Grotesk', sans-serif;
-    --body: 'Manrope', sans-serif;
-    --mono: 'DM Mono', monospace;
+    --display: "Space Grotesk", sans-serif;
+    --body: "Manrope", sans-serif;
+    --mono: "DM Mono", monospace;
 }
 * {
     box-sizing: border-box;
@@ -232,7 +232,7 @@ h2 em {
     transform: rotate(3deg);
 }
 .portrait-wrap:before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 15px;
     border: 1px solid #16221d59;
