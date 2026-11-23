@@ -5,6 +5,9 @@
 - https://github.com/Soham109/cpos/pull/5
 - https://github.com/NeptuneHub/AudioMuse-AI/pull/737
 - https://github.com/Tudmotu/gnome-shell-extension-clipboard-indicator/pull/628
+
+## CI/CD
+
 - https://github.com/BaaRai/ARTEX/pull/516
 
 ## Version Updates
