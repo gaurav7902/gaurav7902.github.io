@@ -598,6 +598,127 @@ h2 em {
     justify-content: space-between;
     padding-top: 42px;
 }
+.contributions-section {
+    padding: 140px 0 135px;
+    background: var(--forest);
+    color: var(--forest-text);
+}
+.contributions-intro {
+    display: grid;
+    grid-template-columns: 220px 1fr 150px;
+    gap: 74px;
+    align-items: start;
+}
+.contributions-intro .section-label {
+    color: var(--lime);
+}
+.contributions-intro h2 {
+    font: 600 clamp(46px, 5vw, 70px)/1.02 var(--display);
+    letter-spacing: -0.07em;
+}
+.contributions-intro h2 span {
+    color: #aeb8ae;
+}
+.contributions-intro p {
+    max-width: 520px;
+    margin-top: 28px;
+    color: #aeb8ae;
+    font-size: 15px;
+    line-height: 1.8;
+}
+.contribution-count {
+    border-top: 1px solid #5e6a61;
+    border-bottom: 1px solid #5e6a61;
+    padding: 15px 0 18px;
+}
+.contribution-count strong {
+    display: block;
+    color: var(--lime);
+    font: 600 58px/1 var(--display);
+}
+.contribution-count span {
+    display: block;
+    margin-top: 8px;
+    color: #aeb8ae;
+    font: 500 10px var(--mono);
+    text-transform: uppercase;
+}
+.contribution-groups {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 74px;
+    margin: 92px 0 0 294px;
+}
+.contribution-group {
+    border-top: 1px solid #5e6a61;
+}
+.contribution-group h3 {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 18px 0 13px;
+    color: var(--lime);
+    font: 600 18px var(--display);
+}
+.contribution-group h3 span {
+    color: #89968b;
+    font: 500 11px var(--mono);
+}
+.contribution-list {
+    border-bottom: 1px solid #5e6a61;
+}
+.contribution-list a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 15px 0;
+    border-top: 1px solid #334039;
+    color: var(--forest-text);
+    transition:
+        color 0.2s,
+        padding 0.2s;
+}
+.contribution-list a:hover {
+    padding-inline: 8px;
+    color: var(--orange);
+}
+.contribution-list a > span {
+    min-width: 0;
+}
+.contribution-list strong,
+.contribution-list small {
+    display: block;
+}
+.contribution-list strong {
+    overflow-wrap: anywhere;
+    font: 500 14px var(--display);
+}
+.contribution-list small {
+    margin-top: 3px;
+    color: #89968b;
+    font: 500 10px var(--mono);
+    text-transform: uppercase;
+}
+.contribution-list i {
+    flex: 0 0 auto;
+    color: var(--orange);
+    font-size: 13px;
+}
+.contribution-list a:focus-visible,
+.nav-links a:focus-visible,
+.icon-link:focus-visible,
+.icon-button:focus-visible,
+.button:focus-visible,
+.quiet-link:focus-visible,
+.email-link:focus-visible,
+.social-links a:focus-visible,
+.mini-grid a:focus-visible,
+.project-title-row a:focus-visible {
+    outline: 2px solid var(--orange);
+    outline-offset: 5px;
+}
 .more-projects {
     margin-top: 24px;
 }
@@ -792,6 +913,23 @@ footer a {
 .reveal-delay {
     transition-delay: 0.15s;
 }
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
 @media (max-width: 800px) {
     .container {
         width: min(100% - 40px, 600px);
@@ -848,6 +986,21 @@ footer a {
     }
     .projects-section {
         padding-block: 92px;
+    }
+    .contributions-section {
+        padding-block: 92px;
+    }
+    .contributions-intro {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+    .contribution-count {
+        max-width: 180px;
+    }
+    .contribution-groups {
+        grid-template-columns: 1fr;
+        gap: 42px;
+        margin: 70px 0 0;
     }
     .projects-grid,
     .open-source-grid {
@@ -912,6 +1065,9 @@ footer a {
     }
     .project-art {
         height: 230px;
+    }
+    .contributions-intro h2 {
+        font-size: 46px;
     }
     .project-body {
         padding: 22px;

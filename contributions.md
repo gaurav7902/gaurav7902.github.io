@@ -14,6 +14,7 @@
 ## Translations
 
 - https://github.com/github/opensource.guide/pull/3682
+- https://github.com/subhra74/xdm/pull/1382
 
 ## Documentation
 
