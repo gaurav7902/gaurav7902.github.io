@@ -4,24 +4,31 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script>
-            try {
+            (function () {
                 var d = document.documentElement;
-                d.dataset.theme =
-                    localStorage.getItem("theme") ||
-                    (matchMedia("(prefers-color-scheme: dark)").matches
-                        ? "dark"
-                        : "light");
-            } catch (e) {
-                document.documentElement.dataset.theme = "light";
-            }
-            document.documentElement.classList.add("js");
+                var theme = "light";
+                try {
+                    theme =
+                        localStorage.getItem("theme") ||
+                        (matchMedia("(prefers-color-scheme: dark)").matches
+                            ? "dark"
+                            : "light");
+                } catch (e) {}
+                d.dataset.theme = theme;
+                d.classList.add("js");
+                // if the app never starts (e.g. opened via file://), show the static page
+                setTimeout(function () {
+                    if (!window.__app) d.classList.remove("js");
+                }, 4000);
+            })();
         </script>
         <title>Gaurav Patidar / Full-stack developer</title>
         <meta
             name="description"
             content="Portfolio of Gaurav Patidar, a full-stack developer and open source contributor studying Computer Science at IIT ISM Dhanbad." />
         <meta name="author" content="Gaurav Patidar" />
-        <meta name="theme-color" content="#f4f0e8" />
+        <meta name="theme-color" content="#eef2ff" />
+        <meta name="color-scheme" content="light dark" />
         <link rel="canonical" href="https://thegorav.xyz/" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Gaurav Patidar" />
@@ -66,6 +73,10 @@
         <link rel="icon" type="image/png" href="favicon.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="preconnect"
+            href="https://cdnjs.cloudflare.com"
+            crossorigin />
         <link
             href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
             rel="stylesheet" />
@@ -165,6 +176,10 @@
                         <div class="portrait-frame">
                             <img
                                 src="avatar.png"
+                                width="615"
+                                height="615"
+                                fetchpriority="high"
+                                decoding="async"
                                 alt="Portrait of Gaurav Patidar" />
                         </div>
                         <span class="sticker s1">IIT ISM · B.Tech ’28</span>
@@ -191,7 +206,7 @@
             <section id="about" class="section container">
                 <div class="about-grid">
                     <div class="reveal">
-                        <span class="section-label">01 / About</span>
+                        <span class="section-label">About</span>
                         <h2>
                             Curious by default.<br /><mark
                                 >Practical by design.</mark
@@ -217,7 +232,7 @@
                         </div>
                         <div class="stat-grid">
                             <div>
-                                <strong data-stat="repos">30</strong
+                                <strong data-stat="repos">31</strong
                                 ><span>repos</span>
                             </div>
                             <div>
@@ -225,7 +240,7 @@
                                 ><span>followers</span>
                             </div>
                             <div>
-                                <strong data-stat="stars">0</strong
+                                <strong data-stat="stars">13</strong
                                 ><span>stars</span>
                             </div>
                         </div>
@@ -248,7 +263,7 @@
 
             <section id="projects" class="section container">
                 <div class="section-head reveal">
-                    <span class="section-label">02 / Selected work</span>
+                    <span class="section-label">Selected work</span>
                     <h2>Things I built<br /><mark>to learn faster.</mark></h2>
                 </div>
                 <div
@@ -279,7 +294,7 @@
 
             <section id="group-projects" class="section container">
                 <div class="section-head reveal">
-                    <span class="section-label">03 / Collaborative work</span>
+                    <span class="section-label">Collaborative work</span>
                     <h2>Built together.<br /><mark>Group projects.</mark></h2>
                 </div>
                 <div class="grid projects-grid" id="group-projects-grid"></div>
@@ -288,7 +303,7 @@
             <section id="contributions" class="section container">
                 <div class="contrib-head reveal">
                     <div>
-                        <span class="section-label">04 / Open source</span>
+                        <span class="section-label">Open source</span>
                         <h2>
                             Build in public.<br /><mark>Give back often.</mark>
                         </h2>
@@ -329,7 +344,7 @@
 
             <section id="skills" class="section container">
                 <div class="section-head reveal">
-                    <span class="section-label">05 / Toolbox</span>
+                    <span class="section-label">Toolbox</span>
                     <h2>Tools I <mark>reach for.</mark></h2>
                 </div>
                 <div class="skills-grid reveal">
@@ -342,6 +357,7 @@
                             <li>Python</li>
                             <li>Lua</li>
                             <li>Bash</li>
+                            <li>Java</li>
                         </ul>
                     </div>
                     <div class="card skill" style="--c: var(--lime)">
@@ -380,7 +396,7 @@
 
             <section id="experience" class="section container">
                 <div class="section-head reveal">
-                    <span class="section-label">06 / The path so far</span>
+                    <span class="section-label">The path so far</span>
                 </div>
                 <div class="timeline reveal">
                     <article class="card">
@@ -394,7 +410,8 @@
                             <small
                                 >Building full-stack applications with the MERN
                                 stack, open source tools, Linux utilities, and
-                                browser extensions across 30 GitHub
+                                browser extensions across
+                                <b data-stat="repos">31</b> GitHub
                                 repositories.</small
                             >
                         </div>
@@ -419,42 +436,42 @@
 
             <section id="contact" class="contact-section">
                 <div class="container contact-inner">
-                    <span class="section-label">07 / Say hello</span>
+                    <span class="section-label">Say hello</span>
                     <h2>Have a good problem?<br />Let’s work on it.</h2>
                     <a
                         class="btn btn-big email-link"
-                        href="mailto:patidargaurav7902@gmail.com"
-                        >patidargaurav7902@gmail.com
+                        href="mailto:patidargaurav4477@gmail.com"
+                        >patidargaurav4477@gmail.com
                         <i class="fas fa-arrow-up-right-from-square"></i
                     ></a>
                     <div class="social-links">
                         <a
                             class="btn"
-                            href="https://github.com/gaurav7902"
+                            href="https://github.com/gaurav7902/"
                             target="_blank"
                             rel="noopener noreferrer"
                             >GitHub</a
                         ><a
                             class="btn"
-                            href="https://www.linkedin.com/in/gauravpatidar"
+                            href="https://www.linkedin.com/in/gauravpatidar/"
                             target="_blank"
                             rel="noopener noreferrer"
                             >LinkedIn</a
                         ><a
                             class="btn"
-                            href="https://x.com/ggoravv"
+                            href="https://x.com/ggoravv/"
                             target="_blank"
                             rel="noopener noreferrer"
                             >X / Twitter</a
                         ><a
                             class="btn"
-                            href="https://youtube.com/@go7av"
+                            href="https://youtube.com/@go7av/"
                             target="_blank"
                             rel="noopener noreferrer"
                             >YouTube</a
                         ><a
                             class="btn"
-                            href="https://instagram.com/go7av"
+                            href="https://instagram.com/go7av/"
                             target="_blank"
                             rel="noopener noreferrer"
                             >Instagram</a
@@ -492,6 +509,6 @@
             </div>
         </dialog>
         <div id="toast" role="status" aria-live="polite"></div>
-        <script src="script.js"></script>
+        <script type="module" src="js/main.js"></script>
     </body>
 </html>
