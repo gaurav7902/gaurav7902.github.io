@@ -62,6 +62,7 @@ export async function initContributions() {
         COLORS[categories.indexOf(category) % COLORS.length];
 
     $("#contrib-count").textContent = items.length;
+    $("#hero-contrib")?.replaceChildren(document.createTextNode(items.length));
     grid.innerHTML = items
         .map(
             (

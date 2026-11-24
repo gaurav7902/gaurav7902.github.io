@@ -1,4 +1,4 @@
-import {$, $$, reduced} from "./utils.js";
+import {$, $$, reduced, finePointer} from "./utils.js";
 
 const root = document.documentElement;
 const THEME_COLORS = {light: "#eef2ff", dark: "#090d1a"};
@@ -31,7 +31,7 @@ export function toast(message) {
     toastTimer = setTimeout(() => el.classList.remove("show"), 1800);
 }
 
-/* ---------------- progress bar, mobile menu, scroll-spy, reveal ---------------- */
+/* ---------------- progress bar, dock, scroll-spy, reveal ---------------- */
 function initProgress() {
     const bar = $(".progress");
     const update = () => {
@@ -42,26 +42,35 @@ function initProgress() {
     update();
 }
 
-function initMenu() {
-    const toggle = $(".menu-toggle");
-    const links = $(".nav-links");
-    const set = (open) => {
-        links.classList.toggle("is-open", open);
-        toggle.setAttribute("aria-expanded", String(open));
-        toggle.querySelector("i").className = open
-            ? "fas fa-xmark"
-            : "fas fa-bars";
-    };
-    toggle.addEventListener("click", () =>
-        set(!links.classList.contains("is-open")),
+function initDock() {
+    const dock = $(".dock");
+    if (!dock || reduced || !finePointer) return;
+    const items = $$(".dock-item", dock);
+    dock.addEventListener("pointermove", (event) => {
+        const bounds = dock.getBoundingClientRect();
+        items.forEach((item) => {
+            const center =
+                item.getBoundingClientRect().left + item.offsetWidth / 2;
+            const distance = Math.min(Math.abs(event.clientX - center) / 80, 1);
+            item.style.setProperty(
+                "--dock-scale",
+                `${1 + (1 - distance) * 0.22}`,
+            );
+        });
+        dock.style.setProperty(
+            "--dock-pointer-x",
+            `${event.clientX - bounds.left}px`,
+        );
+    });
+    dock.addEventListener("pointerleave", () =>
+        items.forEach((item) => item.style.removeProperty("--dock-scale")),
     );
-    links.addEventListener("click", (e) => e.target.closest("a") && set(false));
 }
 
 // highlights the nav link of the section currently in view
 function initScrollSpy() {
     const links = new Map(
-        $$(".nav-links a").map((a) => [a.getAttribute("href").slice(1), a]),
+        $$(".dock-item[href]").map((a) => [a.getAttribute("href").slice(1), a]),
     );
     const alias = {"group-projects": "projects"};
     const observer = new IntersectionObserver(
@@ -76,6 +85,9 @@ function initScrollSpy() {
         {rootMargin: "-40% 0px -55% 0px"},
     );
     $$("main section[id]").forEach((section) => observer.observe(section));
+    const home = $(".dock-item[href='#top']");
+    if (home && scrollY < innerHeight * 0.35)
+        home.setAttribute("aria-current", "true");
 }
 
 function initReveal() {
@@ -96,7 +108,7 @@ export function initUI() {
     applyTheme(root.dataset.theme === "dark" ? "dark" : "light");
     $(".theme-toggle").addEventListener("click", toggleTheme);
     initProgress();
-    initMenu();
+    initDock();
     initScrollSpy();
     initReveal();
 }

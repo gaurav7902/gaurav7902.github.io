@@ -21,13 +21,17 @@ contributions.md      open-source contributions, parsed by the site
 data/projects.js      projects + group projects (edit this to add a project)
 data/github.json      GitHub snapshot, refreshed weekly by a workflow
 js/main.js            entry point
-js/ui.js              theme, progress bar, nav, scroll-spy, reveal, toast
+js/ui.js              theme, progress bar, dock scroll-spy, reveal, toast
 js/effects.js         typewriter, cursor glow, card spotlight + tilt
-js/projects.js        project cards + filter chips
+js/hero.js            bento hero live repo, stack chips, and IST clock
+js/projects.js        project cards and filter chips
 js/contributions.js   reads contributions.md
-js/github.js          live GitHub stats (snapshot first, then the API)
+js/github.js          shared live GitHub store (snapshot first, then the API)
+js/heatmap.js         contribution calendar and repository-activity fallback
+js/drawer.js          project detail drawer, deep links, and card navigation
 js/palette.js         Ctrl/Cmd+K command palette
-scripts/sync-github.mjs, .github/workflows/sync-github.yml
+scripts/sync-github.mjs
+.github/workflows/sync-github.yml
 ```
 
 ## Everyday edits
@@ -39,4 +43,6 @@ scripts/sync-github.mjs, .github/workflows/sync-github.yml
   `contributions.md`. New headings become new filter chips.
 - **Refresh GitHub numbers now:** run the "Sync GitHub data" workflow, or
   `node scripts/sync-github.mjs`.
-- **Resume:** put your PDF at `resume.pdf` in the repo root.
+- **Contribution calendar:** add the optional `GH_PAT` repository secret to the
+  sync workflow. It is used alongside `GITHUB_TOKEN` for the GraphQL calendar;
+  the UI falls back to repository activity when no calendar is available.

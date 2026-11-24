@@ -5,6 +5,8 @@ const API = "https://api.github.com";
 const CACHE_KEY = "gh-live-v2";
 const CACHE_MS = 15 * 60 * 1000;
 const SELF = new Set([USER, `${USER}.github.io`]); // profile + this site
+let current;
+const listeners = new Set();
 
 // accepts both GitHub API repos and the slim shape stored in the snapshot
 const normalise = (r) => ({
@@ -14,19 +16,38 @@ const normalise = (r) => ({
     stars: r.stargazers_count ?? r.stars ?? 0,
     pushed_at: r.pushed_at,
     url: r.html_url ?? r.url,
+    topics: r.topics || [],
+    description: r.description,
+    homepage: r.homepage,
 });
 
-function summarise(followers, repos) {
+function summarise(followers, repos, extra = {}) {
     const own = repos.map(normalise).filter((r) => !r.fork);
     return {
         repos: own.length,
         followers,
         stars: own.reduce((sum, r) => sum + r.stars, 0),
+        repositories: own,
+        calendar: extra.calendar,
         recent: own
             .filter((r) => !SELF.has(r.name))
             .sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at))
             .slice(0, 3),
     };
+}
+
+export function onGitHub(callback) {
+    listeners.add(callback);
+    if (current) callback(current.data, current.label);
+    return () => listeners.delete(callback);
+}
+
+function publish(data, label) {
+    if (!data.calendar && current?.data.calendar)
+        data = {...data, calendar: current.data.calendar};
+    current = {data, label};
+    listeners.forEach((callback) => callback(data, label));
+    render(data, label);
 }
 
 function countUp(el, to) {
@@ -92,15 +113,17 @@ export async function initGitHub() {
         const response = await fetch(SNAPSHOT);
         if (response.ok) {
             const snap = await response.json();
-            render(
-                summarise(snap.user.followers, snap.repos),
+            publish(
+                summarise(snap.user.followers, snap.repos, {
+                    calendar: snap.calendar,
+                }),
                 `snapshot · ${ago(snap.generated)}`,
             );
         }
     } catch {}
     // 2. upgrade to live numbers when the API is reachable
     try {
-        render(await fetchLive(), "live");
+        publish(await fetchLive(), "live");
     } catch {
         if (!animated) $("#gh-status").textContent = "offline snapshot";
     }

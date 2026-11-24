@@ -23,7 +23,8 @@ function card(project, index) {
         .filter(Boolean)
         .join(" ");
 
-    return `<article class="card project fx" data-tilt ${filters}>
+    return `<article class="card project fx" data-repo="${esc(project.r)}" ${filters}>
+        <button class="card-hit" type="button" data-project="${esc(project.r)}" aria-label="Open details: ${esc(project.t)}"></button>
         <div class="project-art" style="--c: var(--${project.c})">
             <span>${number} / ${esc(project.k)}</span><i class="fas ${project.icon}" aria-hidden="true"></i><b>${esc(project.line)}</b>
         </div>

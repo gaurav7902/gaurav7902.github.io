@@ -1,6 +1,7 @@
 import {$, $$, USER, EMAIL, esc, repoUrl, reduced} from "./utils.js";
 import {toggleTheme, toast} from "./ui.js";
 import {PROJECTS, GROUP_PROJECTS} from "../data/projects.js";
+import {openProject} from "./drawer.js";
 
 const goTo = (id) => () =>
     $(id).scrollIntoView({behavior: reduced ? "auto" : "smooth"});
@@ -32,7 +33,7 @@ const projectCommands = [...PROJECTS, ...GROUP_PROJECTS].flatMap((p) => [
         l: `Open project: ${p.t}`,
         g: "Project",
         i: "fab fa-github",
-        f: openUrl(repoUrl(p)),
+        f: () => openProject(p.r),
     },
     ...(p.homepage
         ? [
@@ -59,12 +60,6 @@ const COMMANDS = [
         g: "Action",
         i: "fas fa-circle-half-stroke",
         f: toggleTheme,
-    },
-    {
-        l: "Download resume",
-        g: "Action",
-        i: "fas fa-file-arrow-down",
-        f: openUrl("resume.pdf"),
     },
     {l: "Copy email address", g: "Action", i: "fas fa-copy", f: copyEmail},
     link("GitHub", "fab fa-github", `https://github.com/${USER}`),
@@ -146,6 +141,10 @@ export function initPalette() {
         else if (e.key === "ArrowUp")
             (e.preventDefault(), select(selected - 1));
         else if (e.key === "Enter") (e.preventDefault(), run(selected));
+        else if (e.key === "Escape") {
+            e.preventDefault();
+            dialog.close();
+        }
     });
     list.addEventListener("click", (e) => {
         const item = e.target.closest("li[data-i]");

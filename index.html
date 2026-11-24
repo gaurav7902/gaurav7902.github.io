@@ -90,54 +90,85 @@
         <div class="progress" aria-hidden="true"></div>
         <div class="cursor-glow" aria-hidden="true"></div>
 
-        <header class="site-header">
-            <div class="container nav-wrap">
-                <a class="brand" href="#top" aria-label="Gaurav Patidar home"
-                    ><span>GP</span><strong>Gaurav Patidar</strong></a
-                >
-                <nav class="nav-links" aria-label="Primary navigation">
-                    <a href="#about">About</a><a href="#projects">Projects</a
-                    ><a href="#contributions">Open source</a
-                    ><a href="#skills">Skills</a><a href="#contact">Contact</a>
-                </nav>
-                <div class="nav-actions">
-                    <button
-                        class="icon-button palette-btn"
-                        type="button"
-                        aria-label="Open command palette"
-                        data-open-palette>
-                        <i class="fas fa-magnifying-glass"></i
-                        ><kbd><span class="kbd-key">Ctrl</span> K</kbd>
-                    </button>
-                    <a
-                        class="icon-button"
-                        href="https://github.com/gaurav7902"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Gaurav's GitHub"
-                        ><i class="fab fa-github"></i
-                    ></a>
-                    <button
-                        class="icon-button theme-toggle"
-                        type="button"
-                        aria-label="Dark mode"
-                        aria-pressed="false">
-                        <i class="fas fa-moon"></i><i class="fas fa-sun"></i>
-                    </button>
-                    <button
-                        class="icon-button menu-toggle"
-                        type="button"
-                        aria-label="Open navigation menu"
-                        aria-expanded="false">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
+        <a class="brand-mark" href="#top" aria-label="Gaurav Patidar home"
+            >GP</a
+        >
+        <nav class="dock" aria-label="Primary navigation">
+            <div class="dock-items">
+                <a
+                    class="dock-item"
+                    href="#top"
+                    aria-label="Home"
+                    data-tooltip="Home"
+                    ><i class="fas fa-house"></i
+                ></a>
+                <a
+                    class="dock-item"
+                    href="#about"
+                    aria-label="About"
+                    data-tooltip="About"
+                    ><i class="fas fa-user"></i
+                ></a>
+                <a
+                    class="dock-item"
+                    href="#projects"
+                    aria-label="Work"
+                    data-tooltip="Work"
+                    ><i class="fas fa-folder-open"></i
+                ></a>
+                <a
+                    class="dock-item"
+                    href="#contributions"
+                    aria-label="Open source"
+                    data-tooltip="Open source"
+                    ><i class="fas fa-code-pull-request"></i
+                ></a>
+                <a
+                    class="dock-item"
+                    href="#skills"
+                    aria-label="Skills"
+                    data-tooltip="Skills"
+                    ><i class="fas fa-toolbox"></i
+                ></a>
+                <a
+                    class="dock-item"
+                    href="#contact"
+                    aria-label="Contact"
+                    data-tooltip="Contact"
+                    ><i class="fas fa-envelope"></i
+                ></a>
+                <span class="dock-divider" aria-hidden="true"></span>
+                <button
+                    class="dock-item"
+                    type="button"
+                    aria-label="Open command palette"
+                    data-tooltip="Command palette · Ctrl K"
+                    data-open-palette>
+                    <i class="fas fa-magnifying-glass"></i>
+                </button>
+                <button
+                    class="dock-item theme-toggle"
+                    type="button"
+                    aria-label="Dark mode"
+                    data-tooltip="Toggle theme"
+                    aria-pressed="false">
+                    <i class="fas fa-moon"></i><i class="fas fa-sun"></i>
+                </button>
+                <a
+                    class="dock-item"
+                    href="https://github.com/gaurav7902"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Gaurav's GitHub"
+                    data-tooltip="GitHub"
+                    ><i class="fab fa-github"></i
+                ></a>
             </div>
-        </header>
+        </nav>
 
         <main id="main">
-            <section id="top" class="hero container">
-                <div class="hero-copy reveal">
+            <section id="top" class="hero container" aria-label="Introduction">
+                <div class="card hero-tile hero-intro fx reveal" style="--i: 0">
                     <p class="sticker">
                         <span class="live-dot"></span> Open to interesting
                         builds
@@ -161,8 +192,6 @@
                         <a class="btn btn-primary" href="#projects"
                             >Explore my work
                             <i class="fas fa-arrow-down"></i></a
-                        ><a class="btn" href="resume.pdf" download
-                            >Resume <i class="fas fa-file-arrow-down"></i></a
                         ><a class="quiet-link" href="#contact"
                             >Let’s talk <i class="fas fa-arrow-right"></i
                         ></a>
@@ -171,7 +200,10 @@
                         Based in India <i></i> IST / GMT +5:30
                     </p>
                 </div>
-                <div class="hero-visual reveal">
+                <div
+                    class="card hero-tile hero-portrait fx reveal"
+                    data-tilt
+                    style="--i: 1">
                     <div class="portrait">
                         <div class="portrait-frame">
                             <img
@@ -182,26 +214,44 @@
                                 decoding="async"
                                 alt="Portrait of Gaurav Patidar" />
                         </div>
-                        <span class="sticker s1">IIT ISM · B.Tech ’28</span>
-                        <span class="sticker s2">Code / Learn / Build</span>
+                        <span class="sticker s1">IIT ISM · B.Tech ’28</span
+                        ><span class="sticker s2">Code / Learn / Build</span>
                     </div>
                 </div>
+                <article
+                    class="card hero-tile hero-mini fx reveal"
+                    id="now-building"
+                    style="--i: 2">
+                    <span class="section-label">Now building</span
+                    ><strong>Loading repository</strong
+                    ><small>GitHub snapshot</small>
+                </article>
+                <a
+                    class="card hero-tile hero-mini fx reveal"
+                    href="#contributions"
+                    style="--i: 3"
+                    ><span class="section-label">Open source</span
+                    ><strong id="hero-contrib">13</strong
+                    ><small>public contributions</small
+                    ><span class="hero-bar" aria-hidden="true"
+                        ><i></i><i></i><i></i></span
+                ></a>
+                <article
+                    class="card hero-tile hero-mini fx reveal"
+                    id="hero-stack"
+                    style="--i: 4">
+                    <span class="section-label">Stack</span>
+                    <div class="hero-chips"></div>
+                </article>
+                <article
+                    class="card hero-tile hero-mini fx reveal"
+                    id="local-time"
+                    style="--i: 5">
+                    <span class="section-label">Local time</span
+                    ><strong>--:--:--</strong
+                    ><small>Based in India · IST / GMT +5:30</small>
+                </article>
             </section>
-
-            <div class="marquee" aria-hidden="true">
-                <div class="track">
-                    <span
-                        >FULL-STACK DEVELOPMENT <b>✳</b> OPEN SOURCE
-                        <b>✳</b> DIGITAL CRAFT <b>✳</b> DEVELOPER TOOLS
-                        <b>✳</b></span
-                    >
-                    <span
-                        >FULL-STACK DEVELOPMENT <b>✳</b> OPEN SOURCE
-                        <b>✳</b> DIGITAL CRAFT <b>✳</b> DEVELOPER TOOLS
-                        <b>✳</b></span
-                    >
-                </div>
-            </div>
 
             <section id="about" class="section container">
                 <div class="about-grid">
@@ -327,6 +377,33 @@
                     </div>
                 </div>
                 <div
+                    id="heatmap"
+                    class="heatmap card reveal"
+                    role="img"
+                    aria-label="Contribution activity"
+                    hidden>
+                    <div class="heatmap-top">
+                        <span class="heatmap-summary"></span
+                        ><span class="heatmap-legend"
+                            ><span>Less</span><i class="level-0"></i
+                            ><i class="level-1"></i><i class="level-2"></i
+                            ><i class="level-3"></i><i class="level-4"></i
+                            ><span>More</span></span
+                        >
+                    </div>
+                    <div class="heatmap-scroll">
+                        <div class="heatmap-months"></div>
+                        <div class="heatmap-body">
+                            <div class="heatmap-days">
+                                <span></span><span>Mon</span><span></span
+                                ><span>Wed</span><span></span><span>Fri</span
+                                ><span></span>
+                            </div>
+                            <div class="heatmap-grid"></div>
+                        </div>
+                    </div>
+                </div>
+                <div
                     class="filters"
                     id="contrib-filters"
                     role="group"
@@ -386,11 +463,6 @@
                             <li>Neovim</li>
                         </ul>
                     </div>
-                </div>
-                <div class="resume-cta reveal">
-                    <a class="btn btn-lime" href="resume.pdf" download
-                        >Download resume <i class="fas fa-file-arrow-down"></i
-                    ></a>
                 </div>
             </section>
 
@@ -507,6 +579,23 @@
             <div class="palette-foot">
                 <span>↑↓ navigate</span><span>↵ run</span><span>esc close</span>
             </div>
+        </dialog>
+        <dialog
+            id="drawer"
+            class="drawer"
+            closedby="any"
+            aria-labelledby="drawer-title">
+            <div class="drawer-top">
+                <span class="section-label">Project details</span
+                ><button
+                    class="drawer-close"
+                    type="button"
+                    command="close"
+                    aria-label="Close project details">
+                    <i class="fas fa-xmark"></i>
+                </button>
+            </div>
+            <div class="drawer-content"></div>
         </dialog>
         <div id="toast" role="status" aria-live="polite"></div>
         <script type="module" src="js/main.js"></script>
