@@ -1,7 +1,7 @@
 import {$, $$, reduced, finePointer} from "./utils.js";
 
 const root = document.documentElement;
-const THEME_COLORS = {light: "#eef2ff", dark: "#090d1a"};
+const THEME_COLORS = {light: "#f3f5f1", dark: "#131b18"};
 
 /* ---------------- theme (CSS does the styling) ---------------- */
 function applyTheme(theme) {
